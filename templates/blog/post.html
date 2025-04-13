@@ -1,0 +1,121 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ post.title }} | Garden Decor Consultants{% endblock %}
+
+{% block content %}
+<article class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Post Header -->
+                <header class="mb-4">
+                    <div class="d-flex gap-2 mb-3">
+                        <span class="badge bg-primary">{{ post.season }}</span>
+                        <span class="badge bg-secondary">{{ post.category }}</span>
+                    </div>
+                    <h1 class="display-4 mb-3">{{ post.title }}</h1>
+                    <div class="d-flex align-items-center text-muted mb-4">
+                        <i class="far fa-calendar-alt me-2"></i> 
+                        <span>Published on {{ post.published_at.strftime('%B %d, %Y') }}</span>
+                    </div>
+                </header>
+                
+                <!-- Featured Image -->
+                {% if post.featured_image %}
+                <figure class="figure mb-5 w-100">
+                    <img src="{{ post.featured_image }}" class="figure-img img-fluid rounded shadow-sm" alt="{{ post.title }}">
+                </figure>
+                {% endif %}
+                
+                <!-- Post Content -->
+                <div class="blog-content mb-5">
+                    {{ post.content|safe }}
+                </div>
+                
+                <!-- Post Footer with Social Sharing -->
+                <div class="post-footer mb-5">
+                    <hr>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h5 class="mb-0">Share this post:</h5>
+                        </div>
+                        <div class="social-share">
+                            <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Share on Facebook">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Share on Twitter">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Share on Pinterest">
+                                <i class="fab fa-pinterest-p"></i> Pinterest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Return to Blog -->
+                <div class="text-center mb-5">
+                    <a href="{{ url_for('blog') }}" class="btn btn-garden">
+                        <i class="fas fa-arrow-left me-2"></i> Back to Blog
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- Related Posts -->
+{% if related_posts %}
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Related Articles</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for related in related_posts %}
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    {% if related.featured_image %}
+                    <img src="{{ related.featured_image }}" class="card-img-top" alt="{{ related.title }}">
+                    {% else %}
+                    <div class="bg-light text-center py-4">
+                        <i class="fas fa-leaf fa-2x text-muted"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <div class="d-flex gap-2 mb-2">
+                            <span class="badge bg-primary">{{ related.season }}</span>
+                        </div>
+                        <h5 class="card-title">{{ related.title }}</h5>
+                        <p class="card-text small">{{ related.summary }}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-top-0">
+                        <a href="{{ url_for('blog_post', slug=related.slug) }}" class="btn btn-sm btn-garden">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Newsletter Signup -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2>Enjoy this article?</h2>
+                <p class="lead mb-4">Sign up for our newsletter to receive more seasonal gardening tips and ideas.</p>
+                <form class="row g-3 justify-content-center">
+                    <div class="col-md-8">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-garden btn-lg">Subscribe</button>
+                    </div>
+                </form>
+                <small class="text-muted mt-3 d-block">We respect your privacy and will never share your information.</small>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

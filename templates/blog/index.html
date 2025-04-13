@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+
+{% block title %}Seasonal Garden Blog | Garden Decor Consultants{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1 class="display-4 text-center mb-4">Seasonal Garden Tips & Inspiration</h1>
+                <p class="lead text-center mb-5">Explore our gardening expertise throughout the seasons. Find tips, inspiration, and creative ideas to transform your outdoor space.</p>
+                
+                <!-- Filters -->
+                <div class="row mb-5">
+                    <div class="col-md-6">
+                        <h5>Filter by Season</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="{{ url_for('blog') }}" class="btn btn-sm {% if not filter_type or filter_type != 'season' %}btn-primary{% else %}btn-outline-secondary{% endif %}">All Seasons</a>
+                            {% for season in seasons %}
+                            <a href="{{ url_for('blog_by_season', season=season) }}" class="btn btn-sm {% if filter_type == 'season' and current_filter == season %}btn-primary{% else %}btn-outline-secondary{% endif %}">{{ season }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Filter by Category</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a href="{{ url_for('blog') }}" class="btn btn-sm {% if not filter_type or filter_type != 'category' %}btn-primary{% else %}btn-outline-secondary{% endif %}">All Categories</a>
+                            {% for category in categories %}
+                            <a href="{{ url_for('blog_by_category', category=category) }}" class="btn btn-sm {% if filter_type == 'category' and current_filter == category %}btn-primary{% else %}btn-outline-secondary{% endif %}">{{ category }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                {% if posts %}
+                <!-- Blog Posts Grid -->
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                    {% for post in posts %}
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            {% if post.featured_image %}
+                            <img src="{{ post.featured_image }}" class="card-img-top" alt="{{ post.title }}">
+                            {% else %}
+                            <div class="bg-light text-center py-5">
+                                <i class="fas fa-leaf fa-3x text-muted"></i>
+                            </div>
+                            {% endif %}
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">{{ post.season }}</span>
+                                    <span class="badge bg-secondary">{{ post.category }}</span>
+                                </div>
+                                <h5 class="card-title">{{ post.title }}</h5>
+                                <p class="card-text">{{ post.summary }}</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-top-0">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">{{ post.published_at.strftime('%B %d, %Y') }}</small>
+                                    <a href="{{ url_for('blog_post', slug=post.slug) }}" class="btn btn-sm btn-garden">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <!-- No Posts Found -->
+                <div class="text-center py-5">
+                    <i class="fas fa-seedling fa-4x mb-3 text-muted"></i>
+                    <h3>No posts found</h3>
+                    {% if filter_type %}
+                    <p>No posts available for the selected {{ filter_type }}. Try another filter or check back later.</p>
+                    <a href="{{ url_for('blog') }}" class="btn btn-garden mt-3">View All Posts</a>
+                    {% else %}
+                    <p>We're currently working on exciting new content. Please check back soon!</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+
+                <!-- Pagination (for future use) -->
+                <!-- <nav aria-label="Blog pagination" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2>Stay Updated with Seasonal Gardening Tips</h2>
+                <p class="lead mb-4">Join our newsletter to receive the latest gardening advice and seasonal decor ideas directly in your inbox.</p>
+                <form class="row g-3 justify-content-center">
+                    <div class="col-md-8">
+                        <input type="email" class="form-control form-control-lg" placeholder="Your email address" required>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-garden btn-lg">Subscribe</button>
+                    </div>
+                </form>
+                <small class="text-muted mt-3 d-block">We respect your privacy and will never share your information.</small>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

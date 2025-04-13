@@ -33,7 +33,7 @@ db.init_app(app)
 
 # Import models
 with app.app_context():
-    from models import Contact
+    from models import Contact, BlogPost
     db.create_all()
 
 # Routes
@@ -64,6 +64,65 @@ def privacy():
 @app.route('/terms')
 def terms():
     return render_template('terms.html')
+
+@app.route('/blog')
+def blog():
+    # Get all published blog posts, ordered by publish date (newest first)
+    posts = BlogPost.query.filter_by(is_published=True).order_by(BlogPost.published_at.desc()).all()
+    
+    # Get unique seasons for filtering
+    seasons = db.session.query(BlogPost.season).distinct().all()
+    seasons = [season[0] for season in seasons]
+    
+    # Get unique categories for filtering
+    categories = db.session.query(BlogPost.category).distinct().all()
+    categories = [category[0] for category in categories]
+    
+    return render_template('blog/index.html', posts=posts, seasons=seasons, categories=categories)
+
+@app.route('/blog/<string:slug>')
+def blog_post(slug):
+    # Get the specific blog post by slug
+    post = BlogPost.query.filter_by(slug=slug, is_published=True).first_or_404()
+    
+    # Get related posts (same season or category, but not the current post)
+    related_posts = BlogPost.query.filter(
+        (BlogPost.season == post.season) | (BlogPost.category == post.category),
+        BlogPost.id != post.id,
+        BlogPost.is_published == True
+    ).order_by(BlogPost.published_at.desc()).limit(3).all()
+    
+    return render_template('blog/post.html', post=post, related_posts=related_posts)
+
+@app.route('/blog/season/<string:season>')
+def blog_by_season(season):
+    # Get posts filtered by season
+    posts = BlogPost.query.filter_by(season=season, is_published=True).order_by(BlogPost.published_at.desc()).all()
+    
+    # Get all seasons for the filter navigation
+    seasons = db.session.query(BlogPost.season).distinct().all()
+    seasons = [s[0] for s in seasons]
+    
+    # Get all categories for the filter navigation
+    categories = db.session.query(BlogPost.category).distinct().all()
+    categories = [c[0] for c in categories]
+    
+    return render_template('blog/index.html', posts=posts, seasons=seasons, categories=categories, current_filter=season, filter_type='season')
+
+@app.route('/blog/category/<string:category>')
+def blog_by_category(category):
+    # Get posts filtered by category
+    posts = BlogPost.query.filter_by(category=category, is_published=True).order_by(BlogPost.published_at.desc()).all()
+    
+    # Get all seasons for the filter navigation
+    seasons = db.session.query(BlogPost.season).distinct().all()
+    seasons = [s[0] for s in seasons]
+    
+    # Get all categories for the filter navigation
+    categories = db.session.query(BlogPost.category).distinct().all()
+    categories = [c[0] for c in categories]
+    
+    return render_template('blog/index.html', posts=posts, seasons=seasons, categories=categories, current_filter=category, filter_type='category')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():

@@ -1,0 +1,274 @@
+{% extends 'layout.html' %}
+
+{% block title %}Project Gallery - Garden Decor Consultants{% endblock %}
+
+{% block content %}
+<!-- Gallery Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center animate-on-scroll">
+            <h1 class="display-4 fw-bold">Our Project Gallery</h1>
+            <p class="lead">Browse our portfolio of completed garden design and decor projects across the USA</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Filter Section -->
+<section class="py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+                    <button class="btn btn-garden-outline filter-btn active" data-filter="all">All Projects</button>
+                    <button class="btn btn-garden-outline filter-btn" data-filter="modern">Modern</button>
+                    <button class="btn btn-garden-outline filter-btn" data-filter="traditional">Traditional</button>
+                    <button class="btn btn-garden-outline filter-btn" data-filter="water">Water Features</button>
+                    <button class="btn btn-garden-outline filter-btn" data-filter="outdoor-living">Outdoor Living</button>
+                    <button class="btn btn-garden-outline filter-btn" data-filter="xeriscape">Xeriscape</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Main Content -->
+<section class="py-4">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Modern Garden Project 1 -->
+            <div class="col-md-6 col-lg-4 gallery-item modern animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1558904541-eba1c56536f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Modern Minimalist Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Modern Minimalist Garden</h5>
+                        <p class="card-text">Seattle, Washington</p>
+                        <p class="card-text">A sleek, contemporary design featuring clean lines, architectural plants, and a monochromatic color palette.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditional Garden Project 1 -->
+            <div class="col-md-6 col-lg-4 gallery-item traditional animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="English Cottage Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">English Cottage Garden</h5>
+                        <p class="card-text">Boston, Massachusetts</p>
+                        <p class="card-text">A romantic, flower-filled garden with lush plantings, climbing roses, and meandering pathways.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Water Feature Project 1 -->
+            <div class="col-md-6 col-lg-4 gallery-item water animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Contemporary Water Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Contemporary Water Garden</h5>
+                        <p class="card-text">Portland, Oregon</p>
+                        <p class="card-text">A serene water garden featuring a custom-designed waterfall, koi pond, and surrounding meditation space.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outdoor Living Project 1 -->
+            <div class="col-md-6 col-lg-4 gallery-item outdoor-living animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Outdoor Entertainment Area">
+                    <div class="card-body">
+                        <h5 class="card-title">Outdoor Entertainment Area</h5>
+                        <p class="card-text">Austin, Texas</p>
+                        <p class="card-text">A comprehensive outdoor living space with kitchen, dining area, fire pit, and integrated landscaping.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Xeriscape Project 1 -->
+            <div class="col-md-6 col-lg-4 gallery-item xeriscape animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Desert Xeriscape">
+                    <div class="card-body">
+                        <h5 class="card-title">Desert Xeriscape Garden</h5>
+                        <p class="card-text">Phoenix, Arizona</p>
+                        <p class="card-text">A water-wise garden featuring drought-tolerant plants, decorative gravel, and sculptural cacti.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modern Garden Project 2 -->
+            <div class="col-md-6 col-lg-4 gallery-item modern animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48388a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Rooftop Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Urban Rooftop Retreat</h5>
+                        <p class="card-text">Chicago, Illinois</p>
+                        <p class="card-text">A modern rooftop garden with container plantings, built-in seating, and skyline views.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditional Garden Project 2 -->
+            <div class="col-md-6 col-lg-4 gallery-item traditional animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Southern Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Southern Charm Garden</h5>
+                        <p class="card-text">Charleston, South Carolina</p>
+                        <p class="card-text">A classic southern garden featuring azaleas, magnolias, and a formal layout with brick pathways.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Water Feature Project 2 -->
+            <div class="col-md-6 col-lg-4 gallery-item water animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Natural Stream">
+                    <div class="card-body">
+                        <h5 class="card-title">Natural Stream & Pond</h5>
+                        <p class="card-text">Denver, Colorado</p>
+                        <p class="card-text">A naturally-inspired water feature that mimics a mountain stream with native plantings.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outdoor Living Project 2 -->
+            <div class="col-md-6 col-lg-4 gallery-item outdoor-living animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Mediterranean Patio">
+                    <div class="card-body">
+                        <h5 class="card-title">Mediterranean Inspired Patio</h5>
+                        <p class="card-text">San Diego, California</p>
+                        <p class="card-text">A warm, inviting outdoor living space with terracotta, olive trees, and a pergola for shade.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Xeriscape Project 2 -->
+            <div class="col-md-6 col-lg-4 gallery-item xeriscape animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1579754810361-986ee5f9b4d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Coastal Xeriscape">
+                    <div class="card-body">
+                        <h5 class="card-title">Coastal Xeriscape</h5>
+                        <p class="card-text">Santa Barbara, California</p>
+                        <p class="card-text">A water-efficient garden featuring coastal natives, succulents, and decorative hardscaping.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modern Garden Project 3 -->
+            <div class="col-md-6 col-lg-4 gallery-item modern animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1626863905121-3b0c0ed7b8c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Geometric Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Geometric Contemporary Garden</h5>
+                        <p class="card-text">Minneapolis, Minnesota</p>
+                        <p class="card-text">A bold garden design featuring strong geometric shapes, sculptural plants, and corten steel elements.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditional Garden Project 3 -->
+            <div class="col-md-6 col-lg-4 gallery-item traditional animate-on-scroll">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://images.unsplash.com/photo-1601944179066-29b8f7e34088?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Colonial Garden">
+                    <div class="card-body">
+                        <h5 class="card-title">Colonial Revival Garden</h5>
+                        <p class="card-text">Williamsburg, Virginia</p>
+                        <p class="card-text">A historically-inspired garden with symmetrical design, boxwood hedges, and heritage plants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Spotlight Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5 animate-on-scroll">
+            <h2 class="display-5 fw-bold">Project Spotlight</h2>
+            <p class="lead">Featured transformation: Seattle Urban Retreat</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">The Challenge</h3>
+                        <p>Our clients had a small, sloped backyard in Seattle's Queen Anne neighborhood that was virtually unusable due to poor drainage, lack of privacy, and limited flat space. They wanted:</p>
+                        <ul class="mb-4">
+                            <li>A functional outdoor living area for entertaining</li>
+                            <li>Privacy from neighboring properties</li>
+                            <li>Low-maintenance plantings suitable for partial shade</li>
+                            <li>A solution to the drainage issues</li>
+                            <li>Year-round visual interest</li>
+                        </ul>
+                        <h3 class="card-title mb-4">Our Solution</h3>
+                        <p>We created a multi-level garden with terraced areas to address the slope while maximizing usable space:</p>
+                        <ul>
+                            <li>Installed a permeable paver patio with built-in seating</li>
+                            <li>Created a rain garden to handle drainage issues</li>
+                            <li>Planted a mixed screen of evergreens and deciduous trees for privacy</li>
+                            <li>Incorporated native plants that thrive in Pacific Northwest conditions</li>
+                            <li>Added subtle landscape lighting for evening enjoyment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1551410224-699683e15636?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Before Transformation">
+                            <div class="card-body">
+                                <h5 class="card-title">Before</h5>
+                                <p class="card-text">The original sloped, unusable backyard with drainage issues.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-0 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="After Transformation">
+                            <div class="card-body">
+                                <h5 class="card-title">After</h5>
+                                <p class="card-text">The transformed space with terraced areas and comfortable seating.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Client Testimonial</h5>
+                                <p class="card-text fst-italic">"Garden Decor Consultants transformed our problematic backyard into our favorite part of the house! We use the space year-round despite Seattle's rainy climate, and the drainage issues are completely resolved. Their understanding of our local growing conditions resulted in a garden that looks great in every season with minimal maintenance."</p>
+                                <p class="card-text text-end">— The Andersons, Seattle, WA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="display-6 fw-bold">Inspired by Our Work?</h2>
+                <p class="lead mb-0">Contact us today to discuss how we can create a beautiful outdoor space for your home.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ url_for('contact') }}" class="btn btn-garden btn-lg">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Additional gallery-specific JavaScript can be added here if needed
+</script>
+{% endblock %}

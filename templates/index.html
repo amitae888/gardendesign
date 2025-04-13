@@ -1,0 +1,187 @@
+{% extends 'layout.html' %}
+
+{% block title %}Garden Decor Consultants - Professional Garden Design Services{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 animate-on-scroll">
+                <h1 class="display-4 fw-bold mb-4">Transform Your Outdoor Space</h1>
+                <p class="lead mb-4">Professional garden decor consultants helping you create stunning outdoor environments across the USA.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ url_for('services') }}" class="btn btn-garden btn-lg">Our Services</a>
+                    <a href="{{ url_for('gallery') }}" class="btn btn-garden-outline btn-lg">View Portfolio</a>
+                </div>
+            </div>
+            <div class="col-lg-6 animate-on-scroll">
+                <div class="ratio ratio-16x9 hero-img">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="Garden Decor Introduction" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Our Services</h2>
+            <p class="lead">Expert garden design and decor consultation for any outdoor space</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="card-title">Garden Design</h3>
+                        <p class="card-text">Comprehensive landscape planning tailored to your style and location. We consider climate zones, soil types, and personal preferences.</p>
+                        <a href="{{ url_for('services') }}" class="btn btn-garden-outline mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <h3 class="card-title">Outdoor Living</h3>
+                        <p class="card-text">Create functional outdoor living spaces with stylish furniture, lighting, and decor that extends your home into nature.</p>
+                        <a href="{{ url_for('services') }}" class="btn btn-garden-outline mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 animate-on-scroll">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3 class="card-title">Water Features</h3>
+                        <p class="card-text">Add tranquility with custom fountains, ponds, and water gardens designed to complement your outdoor environment.</p>
+                        <a href="{{ url_for('services') }}" class="btn btn-garden-outline mt-3">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('services') }}" class="btn btn-garden btn-lg">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Highlight Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Our Work</h2>
+            <p class="lead">Browse our portfolio of completed garden design projects</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4 animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558904541-eba1c56536f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Modern Garden Design" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <h4>Modern Garden Design</h4>
+                        <p>Seattle, WA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Mediterranean Patio" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <h4>Mediterranean Patio</h4>
+                        <p>San Diego, CA</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 animate-on-scroll">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="English Cottage Garden" class="img-fluid rounded">
+                    <div class="gallery-overlay">
+                        <h4>English Cottage Garden</h4>
+                        <p>Boston, MA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{{ url_for('gallery') }}" class="btn btn-garden btn-lg">View Full Gallery</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Preview Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">What Our Clients Say</h2>
+            <p class="lead">Read testimonials from satisfied customers across the USA</p>
+        </div>
+        
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-card p-4">
+                        <p class="fs-5">"Garden Decor Consultants transformed our boring backyard into an oasis! Their team was professional, creative, and worked within our budget. We couldn't be happier with the results!"</p>
+                        <p class="testimonial-author mb-0">— Sarah Johnson, Portland, OR</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-card p-4">
+                        <p class="fs-5">"We hired Garden Decor Consultants to redesign our front yard landscaping. They understood exactly what we wanted and executed it perfectly. Our home's curb appeal has increased tremendously!"</p>
+                        <p class="testimonial-author mb-0">— Michael & Lisa Chen, Austin, TX</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-card p-4">
+                        <p class="fs-5">"The water feature they designed for our garden has become the centerpiece of our outdoor entertaining area. Their attention to detail and knowledge of plants native to our region was impressive."</p>
+                        <p class="testimonial-author mb-0">— Robert Williams, Miami, FL</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="{{ url_for('testimonials') }}" class="btn btn-garden-outline">Read More Testimonials</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2 class="display-6 fw-bold">Ready to Transform Your Outdoor Space?</h2>
+                <p class="lead mb-0">Contact us today for a free consultation and take the first step toward your dream garden.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a href="{{ url_for('contact') }}" class="btn btn-garden btn-lg">Contact Us Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,287 @@
+{% extends 'layout.html' %}
+
+{% block title %}Contact Us - Garden Decor Consultants{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center animate-on-scroll">
+            <h1 class="display-4 fw-bold">Contact Us</h1>
+            <p class="lead">Get in touch to discuss your garden design project</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-5 animate-on-scroll">
+                <h2 class="display-6 fw-bold mb-4">Get in Touch</h2>
+                <p>We'd love to hear about your garden design needs and answer any questions you may have. Reach out to us using any of the methods below, or fill out the contact form.</p>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="service-icon flex-shrink-0">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-1">Our Main Office</h5>
+                        <p class="mb-0">123 Garden Avenue, Seattle, WA 98101</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="service-icon flex-shrink-0">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-1">Phone</h5>
+                        <p class="mb-0">(800) 555-GARDEN</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="service-icon flex-shrink-0">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-1">Email</h5>
+                        <p class="mb-0">info@gardendecorconsultants.com</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <div class="service-icon flex-shrink-0">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-1">Business Hours</h5>
+                        <p class="mb-0">Monday - Friday: 9AM - 5PM<br>Saturday: 10AM - 2PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <h4 class="mt-5 mb-3">Regional Offices</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5 class="mb-1">Chicago Office</h5>
+                        <p class="mb-0">456 Lakeside Drive<br>Chicago, IL 60601<br>(312) 555-GARDEN</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5 class="mb-1">Atlanta Office</h5>
+                        <p class="mb-0">789 Peachtree Street<br>Atlanta, GA 30308<br>(404) 555-GARDEN</p>
+                    </div>
+                </div>
+                
+                <h4 class="mt-4 mb-3">Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#" target="_blank" aria-label="Facebook" class="me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram" class="me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" target="_blank" aria-label="Pinterest" class="me-3"><i class="fab fa-pinterest fa-lg"></i></a>
+                    <a href="#" target="_blank" aria-label="Houzz" class="me-3"><i class="fab fa-houzz fa-lg"></i></a>
+                </div>
+            </div>
+            
+            <div class="col-lg-7 animate-on-scroll">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h2 class="card-title fw-bold mb-4">Send Us a Message</h2>
+                        
+                        <form id="contactForm" action="{{ url_for('contact') }}" method="POST" class="needs-validation" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                    <div class="invalid-feedback">
+                                        Please provide your name.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid email address.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <label for="service_type" class="form-label">Service Interest</label>
+                                    <select class="form-select" id="service_type" name="service_type">
+                                        <option value="" selected>Select a service</option>
+                                        <option value="Garden Design">Garden Design</option>
+                                        <option value="Outdoor Living">Outdoor Living Spaces</option>
+                                        <option value="Water Features">Water Features</option>
+                                        <option value="Lighting Design">Landscape Lighting</option>
+                                        <option value="Hardscaping">Hardscaping Elements</option>
+                                        <option value="Garden Decor">Garden Decor & Accessories</option>
+                                        <option value="Other">Other/Not Sure</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Your Message <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please provide your message.
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                        <label class="form-check-label" for="newsletter">
+                                            Subscribe to our newsletter for garden design tips and inspiration
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-garden btn-lg">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+            <p class="lead">Answers to common questions about our consultation process</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="accordion" id="contactFAQ">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What happens after I submit my contact form?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                After you submit your contact form, one of our garden design consultants will reach out to you within 1-2 business days to discuss your project needs and schedule an initial consultation. We'll answer any immediate questions you have and provide information about our process and pricing.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How much does an initial consultation cost?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                Our initial on-site consultations are $150, which includes a 60-90 minute property evaluation, professional design recommendations, and preliminary budget planning. This fee is applied as a credit toward your design services if you decide to move forward with our company.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Do you offer virtual consultations?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                Yes, we offer virtual consultations for clients who prefer this option or are located outside our service areas. Virtual consultations are conducted via video call and include a review of photos or videos of your space that you provide in advance. Virtual consultations are $100 and also apply toward future design services.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What information should I prepare before my consultation?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#contactFAQ">
+                            <div class="accordion-body">
+                                To make the most of your consultation, it's helpful to prepare:
+                                <ul>
+                                    <li>Photos of your current outdoor space</li>
+                                    <li>Examples or inspiration images of styles you like</li>
+                                    <li>A rough idea of your budget range</li>
+                                    <li>Information about how you want to use the space</li>
+                                    <li>Any property surveys or plans you may have</li>
+                                </ul>
+                                Don't worry if you don't have all of this information - we can help you figure things out during the consultation.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Map Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0 animate-on-scroll">
+                <h2 class="display-6 fw-bold mb-4">Visit Our Office</h2>
+                <p>Our main office in Seattle, Washington is open during regular business hours. We welcome you to visit us to discuss your garden design needs in person.</p>
+                <p>Please call ahead to schedule an appointment to ensure that one of our consultants is available to meet with you.</p>
+                <a href="https://maps.google.com?q=123+Garden+Avenue+Seattle+WA+98101" target="_blank" class="btn btn-garden mt-3">Get Directions</a>
+            </div>
+            <div class="col-lg-7 animate-on-scroll">
+                <div class="ratio ratio-16x9 shadow rounded">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.2891632044985!2d-122.33553248469352!3d47.60600597918477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906ab3f905c4b1%3A0xa636b3f30c5f107d!2s123%201st%20Ave%2C%20Seattle%2C%20WA%2098101!5e0!3m2!1sen!2sus!4v1623256485142!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center animate-on-scroll">
+                <h2 class="display-6 fw-bold mb-4">Stay Inspired</h2>
+                <p class="lead">Subscribe to our newsletter for seasonal garden tips, design inspiration, and special offers.</p>
+                <div class="input-group mt-4 mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your email address" aria-label="Email address">
+                    <button class="btn btn-garden" type="button">Subscribe</button>
+                </div>
+                <p class="small text-muted">We respect your privacy and will never share your information. You can unsubscribe at any time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Additional contact page specific scripts
+    document.addEventListener('DOMContentLoaded', function() {
+        // Enhanced form validation
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                if (!contactForm.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                
+                contactForm.classList.add('was-validated');
+            });
+        }
+    });
+</script>
+{% endblock %}

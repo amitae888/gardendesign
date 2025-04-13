@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <!-- Garden Decor Consultants Logo -->
+  <defs>
+    <style>
+      .leaf {
+        fill: #3a5a40;
+      }
+      .leaf-light {
+        fill: #588157;
+      }
+      .text-main {
+        fill: #3a5a40;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+      }
+      .text-sub {
+        fill: #6c584c;
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+
+  <!-- Leaf Shape -->
+  <path class="leaf" d="M40,20 C60,5 85,15 70,40 C55,65 25,50 40,20 Z" />
+  <path class="leaf-light" d="M42,23 C58,10 80,18 68,38 C56,58 32,46 42,23 Z" />
+  
+  <!-- Small Decorative Leaf -->
+  <path class="leaf" d="M85,30 C95,23 110,25 100,40 C90,55 75,37 85,30 Z" transform="rotate(45, 92, 35)" />
+  
+  <!-- Company Name -->
+  <text x="100" y="35" class="text-main" text-anchor="middle" font-size="16">Garden Decor</text>
+  <text x="100" y="55" class="text-main" text-anchor="middle" font-size="20">Consultants</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="70" class="text-sub" text-anchor="middle">Transform Your Outdoor Space</text>
+</svg>

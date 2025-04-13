@@ -1,0 +1,206 @@
+/* Custom CSS to enhance Bootstrap 5 styling */
+
+/* Custom earthy color variables */
+:root {
+  --garden-green: #3a5a40;
+  --garden-light-green: #588157;
+  --garden-beige: #dad7cd;
+  --garden-brown: #6c584c;
+  --garden-light-brown: #a98467;
+}
+
+/* General styling */
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--bs-dark);
+}
+
+/* Hero section styling */
+.hero-section {
+  background-color: var(--garden-beige);
+  padding: 4rem 0;
+}
+
+.hero-img {
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Card styling */
+.card {
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Custom button styling */
+.btn-garden {
+  background-color: var(--garden-green);
+  color: white;
+  border: none;
+}
+
+.btn-garden:hover {
+  background-color: var(--garden-light-green);
+  color: white;
+}
+
+.btn-garden-outline {
+  border: 2px solid var(--garden-green);
+  color: var(--garden-green);
+}
+
+.btn-garden-outline:hover {
+  background-color: var(--garden-green);
+  color: white;
+}
+
+/* Section styling */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: var(--garden-light-green);
+  bottom: -10px;
+  left: 0;
+}
+
+/* Services section */
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--garden-light-green);
+  margin-bottom: 1rem;
+}
+
+/* Gallery styling */
+.gallery-item {
+  margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Testimonial styling */
+.testimonial-card {
+  background-color: var(--garden-beige);
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: "\201C";
+  font-size: 4rem;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  color: var(--garden-light-brown);
+  opacity: 0.3;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: var(--garden-green);
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--garden-green);
+  color: white;
+  padding: 3rem 0;
+}
+
+.footer a {
+  color: var(--garden-beige);
+}
+
+.footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.social-icons a {
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
+
+/* Contact form styling */
+.contact-form {
+  background-color: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* About page team section */
+.team-member {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 5px solid var(--garden-beige);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .hero-img {
+    margin-top: 2rem;
+  }
+  
+  .team-member img {
+    width: 150px;
+    height: 150px;
+  }
+}
